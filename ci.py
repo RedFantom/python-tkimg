@@ -90,9 +90,7 @@ def ci_windows():
 
 
 def ci_macos():
-    """
-    Setup Travis-CI macOS for wheel building
-    """
+    """Setup Travis-CI macOS for wheel building"""
     run_command("brew install $PYTHON pipenv || echo \"Installed PipEnv\"")
     command_string = "sudo -H $PIP install "
     for element in DEPENDENCIES + REQUIREMENTS + ["-U"]:
@@ -105,9 +103,7 @@ def ci_macos():
 
 
 def ci_linux():
-    """
-    Setup Travis-CI linux for installation and testing
-    """
+    """Setup Travis-CI linux for installation and testing"""
     run_command("sudo apt-get install {}".format(PACKAGES))
     ci()
 
