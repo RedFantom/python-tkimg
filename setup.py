@@ -16,6 +16,8 @@ PLATFORMS = {
     "linux2": "linux"
 }
 
+X86 = ["x86_64", "AMD64", "i386"]
+
 
 def read(file_name):
     """Return the contents of a given file"""
@@ -25,7 +27,7 @@ def read(file_name):
 
 def is_x86():
     """Return whether this machine contains an x86 CPU"""
-    return "86" in machine()
+    return "86" in machine() or machine() in X86
 
 
 def get_bus_width():
