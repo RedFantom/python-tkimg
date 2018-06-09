@@ -25,12 +25,10 @@ matrix:
    - os: osx
 before_install:
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
-      # Linux
       export DISPLAY=:99.0;
       sh -e /etc/init.d/xvfb start;
       sleep 3;
     else
-      # macOS
       brew install python python3 || echo "Installed Python";
     fi;
 script:
