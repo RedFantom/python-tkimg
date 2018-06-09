@@ -1,5 +1,3 @@
-variable dir [pwd]
-
 package ifneeded zlibtcl 1.2.11 \
     [list load [file join $dir libzlibtcl1.2.11.so]]
 package ifneeded pngtcl 1.6.28 \
