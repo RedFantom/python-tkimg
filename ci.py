@@ -38,7 +38,10 @@ def check_wheel_existence():
 def ci(python="python", codecov="codecov", coverage_file="coverage.xml"):
     """Run the most common CI tasks"""
     # Upgrade pip and setuptools and install dependencies
-    from pip._internal import main
+    try:
+        from pip._internal import main
+    except ImportError:
+        from pip import main
     main(["install"] + DEPENDENCIES + REQUIREMENTS + ["-U"])
     # Build the installation wheel
     dist_type = "bdist_wheel" if not SDIST else "sdist"

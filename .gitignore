@@ -3,9 +3,6 @@ __pycache__/
 *.py[cod]
 *$py.class
 
-# C extensions
-*.so
-
 # Distribution / packaging
 .Python
 build/
@@ -105,3 +102,7 @@ venv.bak/
 
 # PyCharm
 /.idea
+
+# Package files
+tkimg/*.so
+tkimg/*.tcl
