@@ -44,7 +44,7 @@ def get_tkimg_path():
 
 def get_pkgindex_path():
     """Return an absolute path to the pkgIndex.tcl file to load"""
-    return os.path.join(get_tkimg_path(), "pkgIndex.tcl")
+    return os.path.join(get_tkimg_path(), "pkgIndex.tcl").replace("\\", "/")
 
 
 def load_tkimg(tk):
