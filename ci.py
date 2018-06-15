@@ -38,10 +38,9 @@ def check_wheel_existence():
 def ci(python="python", codecov="codecov", coverage_file="coverage.xml"):
     """Run the most common CI tasks"""
     # Upgrade pip and setuptools and install dependencies
-    import pip
-    if hasattr(pip, "_internal"):
+    try:
         from pip._internal import main
-    else:
+    except ImportError:
         from pip import main
     main(["install"] + DEPENDENCIES + REQUIREMENTS + ["-U"])
     # Build the installation wheel
