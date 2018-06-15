@@ -102,3 +102,7 @@ venv.bak/
 
 # PyCharm
 /.idea
+
+# Package files
+tkimg/*.so
+tkimg/*.tcl
