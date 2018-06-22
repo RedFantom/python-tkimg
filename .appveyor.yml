@@ -10,9 +10,7 @@ environment:
     - PYTHON: "C:\\PYTHON36-x64"
 build: off
 before_test:
-  - "$source = https://raw.githubusercontent.com/RedFantom/python-package-ci/master/ci.py"
-  - "$dest = ci.py"
-  - "Invoke-WebRequest $source -OutFile $dest"
+  - "Start-FileDownload https://raw.githubusercontent.com/RedFantom/python-package-ci/master/ci.py"
 test_script:
   - "%PYTHON%\\python.exe ci.py"
 artifacts:
