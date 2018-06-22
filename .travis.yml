@@ -31,8 +31,9 @@ before_install:
       sleep 3;
     else
       # macOS
-      brew install python python3 || echo "Installed Python";
+      brew install python python3 wget|| echo "Installed Python";
     fi;
+  - wget https://raw.githubusercontent.com/RedFantom/python-package-ci/master/ci.py
 script:
   - $PYTHON ci.py
 

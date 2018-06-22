@@ -59,7 +59,11 @@ def load_tkimg(tk):
     if not isinstance(tk, Tk):
         message = "Invalid argument type for load_tkimg: {}".format(repr(tk))
         raise TypeError(message)
-    tk = tk.tk
+    load_tkimg_into_interpreter(tk.tk)
+
+
+def load_tkimg_into_interpreter(tk):
+    """Load the TkImg library into a tk interpreter"""
     tkimg = get_tkimg_path()
     with change_directory(tkimg):
         tk.call("lappend", "auto_path", "[{}]".format(tkimg))
