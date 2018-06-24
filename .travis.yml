@@ -34,6 +34,7 @@ before_install:
       brew install python python3 wget|| echo "Installed Python";
     fi;
   - wget https://raw.githubusercontent.com/RedFantom/python-package-ci/master/ci.py
+  - $PYTHON -m pip install configparser -U
 script:
   - $PYTHON ci.py
 

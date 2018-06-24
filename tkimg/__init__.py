@@ -39,12 +39,12 @@ def get_tkimg_path():
     this package as the files are copied upon running setup.py.
     """
     file_path = os.path.abspath(__file__)
-    return os.path.dirname(file_path)
+    return os.path.relpath(os.getcwd(), os.path.dirname(file_path))
 
 
 def get_pkgindex_path():
     """Return an absolute path to the pkgIndex.tcl file to load"""
-    return os.path.join(get_tkimg_path(), "pkgIndex.tcl")
+    return os.path.relpath(os.path.join(get_tkimg_path(), "pkgIndex.tcl"), os.getcwd())
 
 
 def load_tkimg(tk):
