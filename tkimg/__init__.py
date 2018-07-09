@@ -15,6 +15,8 @@ except ImportError:
 __version = namedtuple("Version", "major minor patch")
 version = __version(1, 4, 7)
 
+_FILE_PATH = os.path.abspath(__file__)
+
 
 @contextmanager
 def change_directory(target):
@@ -38,8 +40,7 @@ def get_tkimg_path():
     The TkImg pkgIndex.tcl file should be located in the same folder as
     this package as the files are copied upon running setup.py.
     """
-    file_path = os.path.abspath(__file__)
-    return os.path.dirname(file_path)
+    return os.path.dirname(_FILE_PATH)
 
 
 def get_pkgindex_path():
